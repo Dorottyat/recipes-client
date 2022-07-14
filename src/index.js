@@ -10,6 +10,8 @@ let recipesDiv = document.querySelector("#recipesDiv");
 
 createRecipeBtn.addEventListener("click", postRecipe);
 
+init();
+
 function postRecipe() {
   fetch("http://localhost:8080/recipes", {
     method: "POST",
@@ -17,20 +19,28 @@ function postRecipe() {
       Accept: "application/json, text/plain, */*",
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      name: nameInput.value,
-      serving: servingInput.value,
-      time: timeInput.value,
-      ingredients: ["tojas", "kenyer"],
-      directions: ["fozd meg a tojast", "edd meg a asdasdasd"],
-      note: noteInput.value,
-    }),
+    body: JSON.stringify(createRecipe()),
   });
+
+  window.location.reload();
 }
 
-fetch("http://localhost:8080/recipes")
-  .then((res) => res.json())
-  .then((data) => showRecipes(data));
+function getRecipes() {
+  fetch("http://localhost:8080/recipes")
+    .then((res) => res.json())
+    .then((data) => showRecipes(data));
+}
+
+function createRecipe() {
+  return {
+    name: nameInput.value,
+    serving: servingInput.value,
+    time: timeInput.value,
+    ingredients: ["tojas", "kenyer"],
+    directions: ["fozd meg a tojast", "edd meg a asdasdasd"],
+    note: noteInput.value,
+  };
+}
 
 function showRecipes(data) {
   data.forEach((recipe) => {
@@ -49,4 +59,8 @@ function showRecipe(recipe) {
       <ol class="recipe-directions"></ol>
     </div>
     `;
+}
+
+function init() {
+  getRecipes();
 }
