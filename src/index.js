@@ -12,6 +12,10 @@ createRecipeBtn.addEventListener("click", postRecipe);
 
 init();
 
+function init() {
+  getRecipes();
+}
+
 function postRecipe() {
   fetch("http://localhost:8080/recipes", {
     method: "POST",
@@ -29,17 +33,6 @@ function getRecipes() {
   fetch("http://localhost:8080/recipes")
     .then((res) => res.json())
     .then((data) => showRecipes(data));
-}
-
-function createRecipe() {
-  return {
-    name: nameInput.value,
-    serving: servingInput.value,
-    time: timeInput.value,
-    ingredients: ["tojas", "kenyer"],
-    directions: ["fozd meg a tojast", "edd meg a asdasdasd"],
-    note: noteInput.value,
-  };
 }
 
 function showRecipes(data) {
@@ -61,6 +54,13 @@ function showRecipe(recipe) {
     `;
 }
 
-function init() {
-  getRecipes();
+function createRecipe() {
+  return {
+    name: nameInput.value,
+    serving: servingInput.value,
+    time: timeInput.value,
+    ingredients: ["tojas", "kenyer"],
+    directions: ["fozd meg a tojast", "edd meg a asdasdasd"],
+    note: noteInput.value,
+  };
 }
