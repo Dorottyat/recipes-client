@@ -56,8 +56,14 @@ function showRecipe(recipe) {
       <p class="recipe-serving">${recipe.serving}</p>
       <p class="recipe-time">${recipe.time}</p>
       <p class="recipe-note">${recipe.note}</p>
-      <ul class="recipe-ingredients"></ul>
-      <ol class="recipe-directions"></ol>
+      <h2>Ingredients</h2>
+      <ul class="recipe-ingredients">${recipe.ingredients
+        .map((ingredient) => `<li>${ingredient}</li>`)
+        .join("")}</ul>
+      <h2>Directions</h2>
+      <ol class="recipe-directions">${recipe.directions
+        .map((direction) => `<li>${direction}</li>`)
+        .join("")}</ol>
     </div>
     `;
 }
