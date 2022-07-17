@@ -7,8 +7,16 @@ let timeInput = document.querySelector("#timeInput");
 let noteInput = document.querySelector("#noteInput");
 let createRecipeBtn = document.querySelector("#createRecipeBtn");
 let recipesDiv = document.querySelector("#recipesDiv");
+let ingredientList = document.querySelector("#ingredient-list");
+let directionList = document.querySelector("#direction-list");
 
 createRecipeBtn.addEventListener("click", postRecipe);
+addIngredientBtn.addEventListener("click", () =>
+  addToList("ingredient", ingredientList)
+);
+addDirectionBtn.addEventListener("click", () =>
+  addToList("direction", directionList)
+);
 
 init();
 
@@ -55,12 +63,35 @@ function showRecipe(recipe) {
 }
 
 function createRecipe() {
+  let ingredientInputs = document.querySelectorAll(".ingredient");
+  let directionInputs = document.querySelectorAll(".direction");
+  let ingredients = [];
+  let directions = [];
+
+  ingredientInputs.forEach((ingredientInput) => {
+    ingredients.push(ingredientInput.value);
+  });
+
+  directionInputs.forEach((directionInput) => {
+    directions.push(directionInput.value);
+  });
+
   return {
     name: nameInput.value,
     serving: servingInput.value,
     time: timeInput.value,
-    ingredients: ["tojas", "kenyer"],
-    directions: ["fozd meg a tojast", "edd meg a asdasdasd"],
+    ingredients: ingredients,
+    directions: directions,
     note: noteInput.value,
   };
+}
+
+function addToList(inputClassName, htmlList) {
+  const input = document.createElement("input");
+  input.className = inputClassName;
+
+  const li = document.createElement("li");
+
+  li.appendChild(input);
+  htmlList.appendChild(li);
 }

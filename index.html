@@ -9,19 +9,40 @@
     <script src="src/index.js" defer></script>
   </head>
   <body>
-    <input id="nameInput" type="text" />
-    <input id="servingInput" type="number" />
-    <input id="timeInput" type="number" />
-    <input id="noteInput" type="text" />
-    <button id="createRecipeBtn">Create Recipe</button>
+    <section id="create-recipe">
+      <input id="nameInput" type="text" />
+      <input id="servingInput" type="number" />
+      <input id="timeInput" type="number" />
+      <input id="noteInput" type="text" />
+
+      <div>
+        <label for="">Ingredients</label>
+        <br />
+        <ul id="ingredient-list">
+          <li>
+            <input class="ingredient" type="text" />
+          </li>
+        </ul>
+        <button id="addIngredientBtn">+</button>
+      </div>
+
+      <br />
+      <br />
+
+      <div>
+        <label for="">Directions</label>
+        <br />
+        <ol id="direction-list">
+          <li>
+            <input class="direction" type="text" />
+          </li>
+        </ol>
+        <button id="addDirectionBtn">+</button>
+      </div>
+
+      <button id="createRecipeBtn">Create Recipe</button>
+    </section>
+
     <div id="recipesDiv"></div>
-    <div class="recipe">
-      <h2 class="recipe-name"></h2>
-      <p class="recipe-serving"></p>
-      <p class="recipe-time"></p>
-      <p class="recipe-note"></p>
-      <ul class="recipe-ingredients"></ul>
-      <ol class="recipe-directions"></ol>
-    </div>
   </body>
 </html>
