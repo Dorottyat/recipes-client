@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1.5em;
+
+  @media only screen and (min-width: 750px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    gap: 0;
+    padding: 0;
+    height: 100vh;
+  }
+
+  @media only screen and (min-width: 1800px) {
+    grid-template-columns: 2fr 10fr;
+  }
+}
+
+section {
+  margin: 3em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  @media only screen and (min-width: 600px) {
+    margin: 0;
+  }
+}
+
+input {
+  padding: 1.25em 0.75em;
+  background-color: #eee;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+}
+
+button {
+  padding: 1.25em 0.75em;
+  background-color: rgb(255, 255, 146);
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  margin-top: 1em;
+}
+
+img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  @media only screen and (min-width: 600px) {
+    max-width: 100%;
+  }
+}
+
+section#create-recipe {
+  @media only screen and (min-width: 600px) {
+    padding: 1em;
+  }
+}
+
+section#recipesDiv {
+  @media only screen and (min-width: 600px) {
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 2em;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media only screen and (min-width: 1800px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  list-style-type: none;
+}
+
+.recipe {
+  background-color: #fafafa;
+  border-radius: 10px;
+
+  @media only screen and (min-width: 600px) {
+    margin: 0 auto;
+  }
+}
+
+.recipe-body {
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  @media only screen and (min-width: 600px) {
+    padding: 1em 2em;
+  }
+}
+
+.recipe-badges {
+  display: flex;
+  gap: 0.5em;
+}
+
+.recipe-badge {
+  padding: 0.5em 0.25em;
+  border-radius: 15px;
+  background-color: #eee;
+  width: 50px;
+  text-align: center;
+}

@@ -10,15 +10,17 @@
   </head>
   <body>
     <section id="create-recipe">
+      <label for="nameInput">Name</label>
       <input id="nameInput" type="text" />
+      <label for="servingInput">Servings</label>
       <input id="servingInput" type="number" />
+      <label for="timeInput">Time</label>
       <input id="timeInput" type="number" />
-      <input id="noteInput" type="text" />
 
       <div>
         <label for="">Ingredients</label>
         <br />
-        <ul id="ingredient-list">
+        <ul id="ingredient-list" class="list">
           <li>
             <input class="ingredient" type="text" />
           </li>
@@ -26,13 +28,10 @@
         <button id="addIngredientBtn">+</button>
       </div>
 
-      <br />
-      <br />
-
       <div>
         <label for="">Directions</label>
         <br />
-        <ol id="direction-list">
+        <ol id="direction-list" class="list">
           <li>
             <input class="direction" type="text" />
           </li>
@@ -40,9 +39,14 @@
         <button id="addDirectionBtn">+</button>
       </div>
 
+      <label for="noteInput">Notes</label>
+      <input id="noteInput" type="text" />
+
       <button id="createRecipeBtn">Create Recipe</button>
     </section>
 
-    <div id="recipesDiv"></div>
+    <section id="recipesDiv">
+      <h1>There are no recipes yet...</h1>
+    </section>
   </body>
 </html>

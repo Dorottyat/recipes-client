@@ -44,6 +44,7 @@ function getRecipes() {
 }
 
 function showRecipes(data) {
+  recipesDiv.innerHTML = "";
   data.forEach((recipe) => {
     recipesDiv.innerHTML += showRecipe(recipe);
   });
@@ -52,18 +53,26 @@ function showRecipes(data) {
 function showRecipe(recipe) {
   return `
     <div class="recipe">
-      <h2 class="recipe-name">${recipe.name}</h2>
-      <p class="recipe-serving">${recipe.serving}</p>
-      <p class="recipe-time">${recipe.time}</p>
-      <p class="recipe-note">${recipe.note}</p>
-      <h2>Ingredients</h2>
-      <ul class="recipe-ingredients">${recipe.ingredients
-        .map((ingredient) => `<li>${ingredient}</li>`)
-        .join("")}</ul>
-      <h2>Directions</h2>
-      <ol class="recipe-directions">${recipe.directions
-        .map((direction) => `<li>${direction}</li>`)
-        .join("")}</ol>
+      <img src="../img/food.jpg" alt="food" />
+      <div class="recipe-body">
+        <h2 class="recipe-name">${recipe.name}</h2>
+        <div class="recipe-badges">
+          <p class="recipe-badge">${recipe.serving} &hearts;</p>
+          <p class="recipe-badge">${recipe.time} &hearts;</p>
+        </div>
+        <h2>Ingredients</h2>
+        <ul class="recipe-ingredients list">${recipe.ingredients
+          .map((ingredient) => `<li>${ingredient}</li>`)
+          .join("")}
+        </ul>
+        <h2>Directions</h2>
+        <ol class="recipe-directions list">${recipe.directions
+          .map((direction) => `<li>${direction}</li>`)
+          .join("")}
+        </ol>
+        <h2>Notes</h2>
+        <p class="recipe-note">${recipe.note}</p>
+      </div>
     </div>
     `;
 }
