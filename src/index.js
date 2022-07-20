@@ -44,7 +44,6 @@ function getRecipes() {
 }
 
 function showRecipes(data) {
-  recipesDiv.innerHTML = "";
   data.forEach((recipe) => {
     recipesDiv.innerHTML += showRecipe(recipe);
   });
