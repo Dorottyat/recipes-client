@@ -21,7 +21,7 @@ header h1 i {
   margin-right: 0.25em;
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 750px) {
   header {
     padding: 1em;
   }
@@ -175,6 +175,14 @@ img {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     padding: 2em;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  section#recipesDiv {
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #00000031;
+    border-top-left-radius: 15px;
   }
 }
 

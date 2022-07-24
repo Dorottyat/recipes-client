@@ -17,7 +17,7 @@ header {
     }
   }
 
-  @media only screen and (min-width: 1200px) {
+  @media only screen and (min-width: 750px) {
     padding: 1em;
   }
 }
@@ -139,6 +139,13 @@ section#recipesDiv {
     display: grid;
     grid-template-columns: 1fr;
     padding: 2em;
+  }
+
+  @media only screen and (min-width: 750px) {
+    -moz-box-shadow: inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow: inset 0 0 10px #00000031;
+    border-top-left-radius: 15px;
   }
 
   @media only screen and (min-width: 1200px) {
