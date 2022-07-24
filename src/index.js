@@ -56,8 +56,12 @@ function showRecipe(recipe) {
       <div class="recipe-body">
         <h2 class="recipe-name">${recipe.name}</h2>
         <div class="recipe-badges">
-          <p class="recipe-badge">${recipe.serving} &hearts;</p>
-          <p class="recipe-badge">${recipe.time} &hearts;</p>
+          <p class="recipe-badge">${
+            recipe.serving
+          } <i class="fa-regular fa-clock"></i></p>
+          <p class="recipe-badge">${
+            recipe.time
+          } <i class="fa-solid fa-bell-concierge"></i></p>
         </div>
         <h2>Ingredients</h2>
         <ul class="recipe-ingredients list">${recipe.ingredients
@@ -71,9 +75,20 @@ function showRecipe(recipe) {
         </ol>
         <h2>Notes</h2>
         <p class="recipe-note">${recipe.note}</p>
+        <button onclick="deleteById(${
+          recipe.id
+        })"><i class="fa-solid fa-trash-can"></i></button>
       </div>
     </div>
     `;
+}
+
+function deleteById(id) {
+  fetch("http://localhost:8080/recipes/" + id, {
+    method: "DELETE",
+  });
+
+  window.location.reload();
 }
 
 function createRecipe() {

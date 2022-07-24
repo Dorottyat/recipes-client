@@ -6,11 +6,33 @@
 }
 
 body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  padding-top: 5em;
+}
+
+header h1 {
+  text-align: center;
+}
+
+header h1 i {
+  margin-right: 0.25em;
+}
+
+@media only screen and (min-width: 1200px) {
+  header {
+    padding: 1em;
+  }
+}
+
+.wrapper {
   padding: 1.5em;
 }
 
 @media only screen and (min-width: 750px) {
-  body {
+  .wrapper {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 1fr 1fr;
@@ -21,7 +43,7 @@ body {
 }
 
 @media only screen and (min-width: 1200px) {
-  body {
+  .wrapper {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: 3fr 9fr;
@@ -33,7 +55,7 @@ body {
 }
 
 @media only screen and (min-width: 1800px) {
-  body {
+  .wrapper {
     -ms-grid-columns: 2fr 10fr;
         grid-template-columns: 2fr 10fr;
   }
@@ -48,7 +70,7 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 1em;
+  gap: 0.5em;
 }
 
 @media only screen and (min-width: 600px) {
@@ -66,12 +88,63 @@ input {
 }
 
 button {
-  padding: 1.25em 0.75em;
-  background-color: #ffff92;
-  border-radius: 10px;
-  border: none;
-  width: 100%;
+  position: relative;
+  background-color: black;
+  border-radius: 4em;
+  font-size: 16px;
+  color: white;
+  padding: 0.8em 1.8em;
   margin-top: 1em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border: none;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+}
+
+button:hover {
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+  background-color: #3a3a3a;
+}
+
+button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-box-shadow: 0 0 10px 40px white;
+          box-shadow: 0 0 10px 40px white;
+}
+
+button:active:after {
+  -webkit-box-shadow: 0 0 0 0 white;
+          box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+
+button:active {
+  top: 1px;
 }
 
 img {
@@ -128,12 +201,19 @@ img {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.5em;
+  margin-top: 0.5em;
   list-style-type: none;
 }
 
 .recipe {
   background-color: #fafafa;
   border-radius: 10px;
+  height: 100%;
+}
+
+.recipe button {
+  margin-right: 0;
+  margin-left: auto;
 }
 
 @media only screen and (min-width: 600px) {
@@ -151,7 +231,7 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 1em;
+  gap: 0.5em;
 }
 
 @media only screen and (min-width: 600px) {

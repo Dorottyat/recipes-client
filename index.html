@@ -5,46 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Recipes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/dca7cc817d.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
     <script src="src/index.js" defer></script>
   </head>
   <body>
-    <section id="create-recipe">
-      <label for="nameInput">Name</label>
-      <input id="nameInput" type="text" />
-      <label for="servingInput">Servings</label>
-      <input id="servingInput" type="number" />
-      <label for="timeInput">Time</label>
-      <input id="timeInput" type="number" />
+    <header>
+      <h1><i class="fa-solid fa-bowl-rice"></i> Recipes</h1>
+    </header>
 
-      <div>
-        <label for="">Ingredients</label>
-        <br />
-        <ul id="ingredient-list" class="list">
-          <li>
-            <input class="ingredient" type="text" />
-          </li>
-        </ul>
-        <button id="addIngredientBtn">+</button>
-      </div>
+    <div class="wrapper">
+      <section id="create-recipe">
+        <label for="nameInput">Name</label>
+        <input id="nameInput" type="text" />
+        <label for="servingInput">Servings</label>
+        <input id="servingInput" type="number" />
+        <label for="timeInput">Time</label>
+        <input id="timeInput" type="number" />
 
-      <div>
-        <label for="">Directions</label>
-        <br />
-        <ol id="direction-list" class="list">
-          <li>
-            <input class="direction" type="text" />
-          </li>
-        </ol>
-        <button id="addDirectionBtn">+</button>
-      </div>
+        <div>
+          <label for="">Ingredients</label>
+          <br />
+          <ul id="ingredient-list" class="list">
+            <li>
+              <input class="ingredient" type="text" />
+            </li>
+          </ul>
+          <button id="addIngredientBtn">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
 
-      <label for="noteInput">Notes</label>
-      <input id="noteInput" type="text" />
+        <div>
+          <label for="">Directions</label>
+          <br />
+          <ol id="direction-list" class="list">
+            <li>
+              <input class="direction" type="text" />
+            </li>
+          </ol>
+          <button id="addDirectionBtn"><i class="fa-solid fa-plus"></i></button>
+        </div>
 
-      <button id="createRecipeBtn">Create Recipe</button>
-    </section>
+        <label for="noteInput">Notes</label>
+        <input id="noteInput" type="text" />
 
-    <section id="recipesDiv"></section>
+        <button id="createRecipeBtn">Create Recipe</button>
+      </section>
+
+      <section id="recipesDiv"></section>
+    </div>
   </body>
 </html>

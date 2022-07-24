@@ -5,6 +5,24 @@
 }
 
 body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  padding-top: 5em;
+  h1 {
+    text-align: center;
+    i {
+      margin-right: 0.25em;
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    padding: 1em;
+  }
+}
+
+.wrapper {
   padding: 1.5em;
 
   @media only screen and (min-width: 750px) {
@@ -31,7 +49,7 @@ section {
   margin: 3em 0;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.5em;
 
   @media only screen and (min-width: 600px) {
     margin: 0;
@@ -47,12 +65,54 @@ input {
 }
 
 button {
-  padding: 1.25em 0.75em;
-  background-color: rgb(255, 255, 146);
-  border-radius: 10px;
-  border: none;
-  width: 100%;
+  position: relative;
+  background-color: black;
+  border-radius: 4em;
+  font-size: 16px;
+  color: white;
+  padding: 0.8em 1.8em;
   margin-top: 1em;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  border: none;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+
+button:hover {
+  transition-duration: 0.1s;
+  background-color: #3a3a3a;
+}
+
+button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px white;
+}
+
+button:active:after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+button:active {
+  top: 1px;
 }
 
 img {
@@ -94,12 +154,19 @@ section#recipesDiv {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  margin-top: 0.5em;
   list-style-type: none;
 }
 
 .recipe {
   background-color: #fafafa;
   border-radius: 10px;
+  height: 100%;
+
+  button {
+    margin-right: 0;
+    margin-left: auto;
+  }
 
   @media only screen and (min-width: 600px) {
     margin: 0 auto;
@@ -110,7 +177,7 @@ section#recipesDiv {
   padding: 1em;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 0.5em;
 
   @media only screen and (min-width: 600px) {
     padding: 1em 2em;
